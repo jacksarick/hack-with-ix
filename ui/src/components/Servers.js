@@ -61,8 +61,13 @@ class ServerListView extends Component {
 class ServerView extends Component {
   render () {
     var server = this.props.server
+
+    const statusStyle = {
+      color: server.status
+    }
+
     return (
-      <li>Server { server.id } in data center {server.dc}</li>
+      <li>Server { server.id } in data center {server.dc} | Status: <span style={statusStyle}>⬤</span></li>
     )
   }
 }
